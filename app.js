@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./db');
@@ -15,17 +14,16 @@ const User = mongoose.model('User', new mongoose.Schema({
   email: String
 }));
 
-// GET - Fetch all users
 app.get('/api/users', async (req, res) => {
   const users = await User.find();
   res.json(users);
 });
 
-// POST - Add a user
 app.post('/api/users', async (req, res) => {
   const user = new User(req.body);
   await user.save();
   res.json(user);
 });
 
-app.listen(3000, () => console.log('🚀 Server on http://localhost:3000'));
+
+app.listen(3000, () => console.log(' Server on PORT - 3000'));
