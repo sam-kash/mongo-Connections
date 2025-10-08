@@ -8,7 +8,6 @@ app.use(express.static('public'));
 
 connectDB();
 
-// Simple User model
 const User = mongoose.model('User', new mongoose.Schema({
   name: String,
   email: String
